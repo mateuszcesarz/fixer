@@ -1,5 +1,5 @@
 # Fixer
-
+https://apilayer.com/marketplace/fixer-api?e=Sign+Up&l=Success
 ## Setup
 Open the fixer.properties file and replace YOUR_API_KEY with your actual Fixer API key:
 key=YOUR_API_KEY
