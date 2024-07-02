@@ -89,19 +89,19 @@ public class ReadTimeseriesSteps {
 
         Assertions.assertThat(jsonPath
                         .getMap("rates"))
-                .containsKeys(requestHandler.getQueryParams().get("start_date"));
+                        .containsKeys(requestHandler.getQueryParams().get("start_date"));
 
         Assertions.assertThat(jsonPath
                         .getMap("rates." + requestHandler.getQueryParams().get("start_date")))
-                .containsKeys("EUR", "USD", "PLN");
+                        .containsKeys("EUR", "USD", "PLN");
 
         Assertions.assertThat(jsonPath
                         .getMap("rates"))
-                .containsKeys(requestHandler.getQueryParams().get("start_date"));
+                        .containsKeys(requestHandler.getQueryParams().get("start_date"));
 
         Assertions.assertThat(jsonPath
                         .getMap("rates." + requestHandler.getQueryParams().get("end_date")))
-                .containsKeys("EUR", "USD", "PLN");
+                        .containsKeys("EUR", "USD", "PLN");
     }
 
     @When("I request historical exchange rate s data without providing start_date")
@@ -145,6 +145,4 @@ public class ReadTimeseriesSteps {
         requestHandler.addQueryParam("base", base);
         return readRequest.read(requestHandler);
     }
-
-
 }
