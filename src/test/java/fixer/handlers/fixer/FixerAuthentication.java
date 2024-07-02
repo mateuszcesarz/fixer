@@ -5,15 +5,16 @@ import lombok.SneakyThrows;
 import java.util.Properties;
 
 public class FixerAuthentication {
-    private final String apikey;
+    private final static Properties PROPERTIES = new Properties();
+    private final static String KEY = "key";
 
     @SneakyThrows
     public FixerAuthentication() {
-        this.apikey = System.getProperty("fixer.apikey");
+        PROPERTIES.load(getClass().getClassLoader().getResourceAsStream("fixer.properties"));
 
     }
 
     public String getKey() {
-        return apikey;
+        return PROPERTIES.getProperty(KEY);
     }
 }
